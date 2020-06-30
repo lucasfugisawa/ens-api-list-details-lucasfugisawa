@@ -1,0 +1,44 @@
+<style>
+  p{
+    color: #444444;
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+  .input{
+    background-color: #888888;
+    color: white;
+    padding: 5px;
+  }
+  .result {
+    padding: 10px;
+    background-color: #444444;
+    color: white;
+  }
+</style>
+
+<h4>Consultar uma api que retorna uma lista e depois buscar mais detalhes para cada resultado encontrado.</h4>
+<p>
+  Sua função deverá consultar 2 APIs (que são promises) com dados de monstros do D&D 5e, representadas pelas funções abaixo:
+</p>
+<ul>
+  <li><strong>listMonsters(query: string)</strong> - Retorna uma lista de monstros que contenham no nome o texto da query. Cada monstro retornado na lista inclui o campo <strong>index</strong>;</li>
+  <li><strong>getMonster(index: string)</strong> - Pega os detalhes de um monstro de acordo com o seu index;</li>
+</ul>
+<p>
+  Sua função deve receber um nome e buscar a lista de todos os monstros com esse nome. Para cada monstro encontrado, pegar os dados completos do monstro. Sua função deve devolver um array em que cada posição possui um objeto com o nome do monstro (<strong>name</strong>) e o valor de vida do monstro (campo <strong>hit_points</strong>) 
+</p>
+<p>Exemplo de resposta:</p>
+<pre>
+  await getMonstersHitPoints("ogre");
+  [
+    {name: "Ogre", hit_points: 59},
+    {name: "Ogre Zombie", hit_points: 85},
+  ]
+</pre>
+<p>Dicas:</p>
+<ul>
+  <li>Promises são <a href="https://javascript.info/promise-chaining">encadeáveis</a>;</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">Promise.all</a>;</li>
+</ul>
+<div id="results" />
